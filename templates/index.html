@@ -1,0 +1,29 @@
+{% extends "layout/base.html" %}
+{% block title %}Requireris{% endblock %}
+
+{% block content %}
+	<div id="show">
+		<h1>Requireris</h1>
+	</div>
+	{% if users %}
+	<form name="users" method="POST" id="users">
+		<select placeholder="ok" name="users_list" required>
+			<option value="" disabled="" selected="">Already registered ?</option>
+			{% 	for values in range(users|length): %}
+				<option value="{% print users_key[values] %}">{% print users[values] %}</option>
+			{% endfor %}
+		</select>
+		<button type="submit" id="submit_user" name="submit">Get your code !</button>
+	</form>
+	{% endif %}
+	{% if secret_example %}
+		<p>Lazy ?</p>
+		<p>You can try with a 32 character base32 secret which is compatible with Google Authenticator :</p>
+		<p><strong>{{ secret_example }}</strong></p>
+	{% endif %}
+	<form name="send_secret" method="POST" id="send_secret">
+		<label>Secret</label>
+		<input type="text" name="secret" id="secret" placeholder="Enter secret" required>
+		<button type="submit" id="submit" name="submit">Get your code !</button>
+	</form>
+{% endblock %}

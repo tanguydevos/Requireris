@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>{% block title %}{% endblock %}</title>
+
+  {% for stylesheet in stylesheets %}
+  <link rel="stylesheet" href={{ stylesheet }}>
+  {% endfor %}
+
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <nav class="w100">
+      <a href="/">Accueil</a>
+    </nav>
+  </header>
+    <div class="page w100">
+      <div id="content">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+</body>
+</html>

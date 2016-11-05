@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% block title %}Requireris - Register{% endblock %}
+
+{% block content %}
+<form method="POST" id="register">
+		<label>Username</label>
+		<input type="text" name="username" id="username" placeholder="Enter your username" required>
+		<button type="submit" id="submit" name="submit">Submit</button>
+</form>
+{% endblock %}

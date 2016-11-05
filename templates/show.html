@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+{% block title %}Requireris - Token{% endblock %}
+
+{% block content %}
+	<div id="show">
+		{% if secret %}
+			<h1>{{ secret }}</h1>
+		{% else %}
+			<h1>Sorry, there is nothing here.</h1>
+		{% endif %}
+		 {% if old_secret %}
+			<a href="/register/{{ old_secret }}"><p>Would you like to register as a <strong>user</strong> ?</p></a>
+		{% else %}
+			<p>Thanks to use our requireris dear user.</p>
+		{% endif %}
+	</div>
+{% endblock %}
